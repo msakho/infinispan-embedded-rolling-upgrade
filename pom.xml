@@ -20,6 +20,13 @@
       <module>common</module>
    </modules>
 
+   <repositories>
+      <repository>
+         <id>jboss-community</id>
+         <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
+      </repository>
+   </repositories>
+
    <dependencyManagement>
       <dependencies>
          <dependency>
