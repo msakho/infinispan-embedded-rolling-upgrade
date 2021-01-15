@@ -50,4 +50,7 @@ curl "http://localhost:8888/rest/v2/caches/cache?action=keys"
 
 It's also possible to view any object from the cache by passing using the following REST url. 
 We use the key=1 
+```
+curl  -H "Key-Content-Type: application/x-java-object; type=java.lang.Integer" "http://localhost:8888/rest/v2/caches/cache/1"
+```
 curl  -H "Key-Content-Type: application/x-java-object; type=java.lang.Integer" "http://localhost:8888/rest/v2/caches/cache/1"
