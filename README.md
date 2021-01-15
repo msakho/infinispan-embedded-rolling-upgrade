@@ -53,4 +53,4 @@ We use the key=1
 ```
 curl  -H "Key-Content-Type: application/x-java-object; type=java.lang.Integer" "http://localhost:8888/rest/v2/caches/cache/1"
 ```
-curl  -H "Key-Content-Type: application/x-java-object; type=java.lang.Integer" "http://localhost:8888/rest/v2/caches/cache/1"
+
