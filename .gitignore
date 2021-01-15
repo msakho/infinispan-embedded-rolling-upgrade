@@ -1,5 +1,22 @@
 *.iml
+*.class
 target/
 .idea
 *.log
 *.jfr
+
+# Package Files #
+*.jar
+*.war
+*.ear
+.settings
+.project
+.classpath
+.idea
+*.iml
+dependency-reduced-pom.xml
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+# Other
+.DS_Store
