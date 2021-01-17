@@ -1,12 +1,15 @@
 package org.infinispan.sample.source;
 
 import org.infinispan.Cache;
-import org.infinispan.commons.dataconversion.MediaType;
+//import org.infinispan.commons.dataconversion.MediaType;
 import org.infinispan.configuration.cache.CacheMode;
+import org.infinispan.configuration.cache.Configuration;
 import org.infinispan.configuration.cache.ConfigurationBuilder;
+import org.infinispan.configuration.cache.VersioningScheme;
 import org.infinispan.configuration.global.GlobalConfiguration;
 import org.infinispan.configuration.global.GlobalConfigurationBuilder;
 import org.infinispan.manager.DefaultCacheManager;
+import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.sample.CustomObject;
 import org.infinispan.sample.Util;
 import org.infinispan.server.hotrod.HotRodServer;
@@ -22,11 +25,10 @@ public class MainApp {
 
       ConfigurationBuilder builder = new ConfigurationBuilder();
       builder.clustering().cacheMode(CacheMode.DIST_SYNC);
-      builder.encoding().key().mediaType(MediaType.APPLICATION_OBJECT_TYPE);
-      builder.encoding().value().mediaType(MediaType.APPLICATION_OBJECT_TYPE);
+      builder.compatibility().enable();
 
       GlobalConfigurationBuilder gcb = GlobalConfigurationBuilder.defaultClusteredBuilder();
-      GlobalConfiguration globalConfiguration = gcb.defaultCacheName("default").build();
+      GlobalConfiguration globalConfiguration = gcb.build();
       DefaultCacheManager cacheManager = new DefaultCacheManager(globalConfiguration, new ConfigurationBuilder().build(), true);
 
       cacheManager.defineConfiguration(CACHE_NAME, builder.build());
