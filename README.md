@@ -5,6 +5,7 @@ Showcase for migration of embedded clusters using Hot Rod.
 
 An embedded cluster with version ```DG 7.0``` stores caches
 as POJOs, and has an embedded Hot Rod server that is used by a second cluster running ```11.0.x``` to migrate data without downtime.
+
 :warning: Java 8 should be used to run the processes!
 ## Build the project
 
